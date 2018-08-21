@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title>Add Customer</title>
+	<title>Update Student</title>
 	
 	<h:outputStylesheet library="css" name="list-customers-style.css"  />
 	<h:outputStylesheet library="css" name="add-customer-style.css"  />
@@ -23,26 +23,29 @@
 	</div>
 	
 	<div id="container">
-		<h3>Add Customer</h3>
+		<h3>Update Customer</h3>
 
 		<h:messages globalOnly="true" />
 
 		<h:form id="form" style="margin-top: 10px;" >
 			<h:panelGrid columns="3">
 			
-				<h:outputLabel>ID:</h:outputLabel> <h:inputText value="#{customer.id}" id="id" /> <h:message for="id" />
-			
 				<h:outputLabel>First name:</h:outputLabel> <h:inputText value="#{customer.firstName}" id="firstName" /> <h:message for="firstName" />
 	
 				<h:outputLabel>Last name:</h:outputLabel> <h:inputText value="#{customer.lastName}" id="lastName" /> <h:message for="lastName" />
 	
-				<h:outputLabel>Email:</h:outputLabel> <h:inputText value="#{customer.email}" id="email" required="true" requiredMessage="Your email is mandatory."/> <h:message for="email" />
+				<h:outputLabel>Email:</h:outputLabel> <h:inputText value="#{customer.email}" id="email" 
+									required="true"
+            							requiredMessage="Your email is mandatory."/> 	<h:message for="email"  />
             							
-				<h:outputLabel>Password:</h:outputLabel> <h:inputText value="#{customer.password}" id="password" /> <h:message for="password" />            							
+            	<h:outputLabel>Password:</h:outputLabel> <h:inputText value="#{customer.password}" id="password" /> <h:message for="password" />
+            	
+            	<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{customer.phoneNumber}" id="phoneNumber" /> <h:message for="phoneNumber" />
 				
-				<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{customer.phoneNumber}" id="phoneNumber" /> <h:message for="phoneNumber" />
+				 <h:inputHidden value="#{customer.id}" />
 				
-				<h:outputLabel /> <h:commandButton value="Save" styleClass="save" action="#{updateCustomerController.addCustomer(customer)}"/>
+				 <h:commandButton value="Save" styleClass="save" 
+				 			action="#{updateCustomerController.updateCustomer(customer)}"/>
 			
 			</h:panelGrid>
 		</h:form>

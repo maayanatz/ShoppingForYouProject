@@ -116,7 +116,7 @@ public class ShoppingDbUtil {
 		try {
 			myConn = getConnection();
 
-			String sql = "select * from customers where =?";
+			String sql = "select * from customers where Customer_ID = ?";
 
 			myStmt = myConn.prepareStatement(sql);
 			
@@ -158,19 +158,17 @@ public class ShoppingDbUtil {
 		try {
 			myConn = getConnection();
 
-			String sql = "update customer "
-						+ " set First_Name=?, Last_Name=?, Email_Address=?, Password=?, Phone_Number=?"
-						+ " where Customer_ID=?";
+			String sql = "update customers set First_Name=?, Last_Name=?, Email_Address=?, Password=?, Phone_Number=? where Customer_ID=?";
 
 			myStmt = myConn.prepareStatement(sql);
 
 			// set params
-			myStmt.setInt(1, theCustomer.getId());
-			myStmt.setString(2, theCustomer.getFirstName());
-			myStmt.setString(3, theCustomer.getLastName());
-			myStmt.setString(4, theCustomer.getEmail());
-			myStmt.setString(5, theCustomer.getPassword());
-			myStmt.setInt(6, theCustomer.getPhoneNumber());
+			myStmt.setString(1, theCustomer.getFirstName());
+			myStmt.setString(2, theCustomer.getLastName());
+			myStmt.setString(3, theCustomer.getEmail());
+			myStmt.setString(4, theCustomer.getPassword());
+			myStmt.setInt(5, theCustomer.getPhoneNumber());
+			myStmt.setInt(6, theCustomer.getId());
 			
 			myStmt.execute();
 		}
