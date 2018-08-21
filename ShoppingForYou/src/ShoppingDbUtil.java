@@ -87,7 +87,7 @@ public class ShoppingDbUtil {
 		try {
 			myConn = getConnection();
 
-			String sql = "insert into customers (id, first_name, last_name, email, password, phoneNumber) values (?, ?, ?, ?, ?, ?)";
+			String sql = "insert into customers (Customer_ID, First_Name, Last_Name, Email_Address, Password, Phone_Number) values (?, ?, ?, ?, ?, ?)";
 
 			myStmt = myConn.prepareStatement(sql);
 
