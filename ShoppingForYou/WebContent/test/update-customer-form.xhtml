@@ -45,14 +45,14 @@
 				 <h:inputHidden value="#{customer.id}" />
 				
 				 <h:commandButton value="Save" styleClass="save" 
-				 			action="#{updateCustomerController.updateCustomer(customer)}"/>
+				 			action="#{deleteCustomerController.updateCustomer(customer)}"/>
 			
 			</h:panelGrid>
 		</h:form>
 
 		<div style="clear: both;"></div>
 
-		<p><h:outputLink value="update-and-add-and-list-customers.xhtml">Back to List</h:outputLink></p>
+		<p><h:outputLink value="delete-update-add-list-customers.xhtml">Back to List</h:outputLink></p>
 
 	</div>	
 </h:body>

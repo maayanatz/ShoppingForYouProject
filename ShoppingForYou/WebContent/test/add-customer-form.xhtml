@@ -42,14 +42,14 @@
 				
 				<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{customer.phoneNumber}" id="phoneNumber" /> <h:message for="phoneNumber" />
 				
-				<h:outputLabel /> <h:commandButton value="Save" styleClass="save" action="#{updateCustomerController.addCustomer(customer)}"/>
+				<h:outputLabel /> <h:commandButton value="Save" styleClass="save" action="#{deleteCustomerController.addCustomer(customer)}"/>
 			
 			</h:panelGrid>
 		</h:form>
 
 		<div style="clear: both;"></div>
 
-		<p><h:outputLink value="update-and-add-and-list-customers.xhtml">Back to List</h:outputLink></p>
+		<p><h:outputLink value="delete-update-add-list-customers.xhtml">Back to List</h:outputLink></p>
 
 	</div>	
 </h:body>

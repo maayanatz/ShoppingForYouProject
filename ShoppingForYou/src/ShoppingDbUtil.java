@@ -186,7 +186,7 @@ public class ShoppingDbUtil {
 		try {
 			myConn = getConnection();
 
-			String sql = "delete from customers where Customer_ID=?";
+			String sql = "delete from customers where Customer_ID = ?";
 
 			myStmt = myConn.prepareStatement(sql);
 
